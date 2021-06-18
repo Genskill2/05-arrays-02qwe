@@ -67,12 +67,14 @@ int min(int A[], int size)
           mini=A[i];
   return mini;
 }
+
 int mode(int A[], int size )
 {    int P[size],k=0;
      for(int i=0;i<size;++i)
-     { for(int j=i+1;j<size;++j)
-        {  if (A[j]==A[i])
-        { A[j]=1000; P[i]++;
+     {     P[i]=0;
+	     for(int j=i+1;j<size;++j)
+        {  if (A[j]==A[i] && int(A[i])!=42)
+           {   A[j]='*'; P[i]++;
                   }
            }
            }
