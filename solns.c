@@ -5,7 +5,7 @@ float average(int A[], int size)
 {   int sum=0;
     for(int i=0;i<size;++i)
     sum+=A[i];
-    float avg=(float)(sum/size); 
+    float avg=(float)(sum)/size; 
     return avg;
 }
 int factors(int n, int A[])
@@ -35,9 +35,9 @@ int factors(int n, int A[])
 	      A[k++] = i;
 	      n /= i;
 	     // printf ("i:%d", i);
-           while(n%i==0)
-            {A[k++]=i;
-             n/=i;}
+              while(n%i==0)
+              {A[k++]=i;
+               n/=i;}
 	    } 
        	      ++i;
 	   } //printf("\n& %d",n);
@@ -50,8 +50,6 @@ int factors(int n, int A[])
   return k;
 }
 
-  
-}
 int max(int A[], int size)
 {
   int maxi=-32655;
@@ -66,7 +64,7 @@ int min(int A[], int size)
   for(int i=0;i<size;++i)
       if(A[i]<mini)
           mini=A[i];
-  return min;
+  return mini;
 }
 int mode(int A[], int size )
 {    int P[size],k=0;
