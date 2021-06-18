@@ -77,7 +77,7 @@ int mode(int A[], int size )
                   }
            }
            }
-      int maxi=intmin;
+      int maxi=-32655;
   for(int i=0;i<size;++i)
       if(P[i]>maxi)
         maxi=i;
