@@ -8,7 +8,8 @@ float average(int A[], int size)
     float avg=(float)(sum)/size; 
     return avg;
 }
-int factors(int n, int A[])
+
+ int factors(int n, int A[])
 {
  
   int s = n, k = 0, l = 0, P[n / 2], i;
@@ -34,15 +35,15 @@ int factors(int n, int A[])
 	    {
 	      A[k++] = i;
 	      n /= i;
-	     // printf ("i:%d", i);
+	      printf ("\n i:%d", i);
               while(n%i==0)
               {A[k++]=i;
                n/=i;}
 	    } 
        	      ++i;
 	   } //printf("\n& %d",n);
-     if((!(i<n/2))&&P[n])
-     {A[k]=n;n=0; 
+     if(n!=1)
+     {A[k++]=n;n=0; 
       break;}
      ++i;
     }
