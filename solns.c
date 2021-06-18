@@ -54,7 +54,7 @@ int factors(int n, int A[])
 }
 int max(int A[], int size)
 {
-  int maxi=intmin;
+  int maxi=-32655;
   for(int i=0;i<size;++i)
       if(A[i]>maxi)
         maxi=A[i];
@@ -62,7 +62,7 @@ int max(int A[], int size)
 }
 int min(int A[], int size)
 {
-  int mini=intmax;
+  int mini=64000;
   for(int i=0;i<size;++i)
       if(A[i]<mini)
           mini=A[i];
