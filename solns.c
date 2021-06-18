@@ -8,9 +8,48 @@ float average(int A[], int size)
     float avg=(float)(sum/size); 
     return avg;
 }
-int factors(int size , int A[])
+int factors(int n, int A[])
 {
-  
+ 
+  int s = n, k = 0, l = 0, P[n / 2], i;
+  P[0] = 0;
+  P[1] = 0;
+  for (int i = 2; i < n / 2; ++i)
+    {
+      P[i] = 1;
+      for (int j = 2; j <= i / 2; ++j)
+	if (i % j == 0)
+	  {
+	    P[i] = 0;
+	    break;
+	  }
+          }
+ // printf ("\n Prime factors");
+  while (n > 1)
+    { //printf("This is outer loop");
+      i = 2;
+      while ((i < n / 2))
+	   {  //printf("\nThis is inner loop %d ",i);
+	      if (P[i] && n % i == 0)
+	    {
+	      A[k++] = i;
+	      n /= i;
+	     // printf ("i:%d", i);
+           while(n%i==0)
+            {A[k++]=i;
+             n/=i;}
+	    } 
+       	      ++i;
+	   } //printf("\n& %d",n);
+     if((!(i<n/2))&&P[n])
+     {A[k]=n;n=0; 
+      break;}
+     ++i;
+    }
+  //printf ("%d ", k);
+  return k;
+}
+
   
 }
 int max(int A[], int size)
@@ -30,9 +69,18 @@ int min(int A[], int size)
   return min;
 }
 int mode(int A[], int size )
-{
-  
-  
-  
-  
+{    int P[size],k=0;
+     for(int i=0;i<size;++i)
+     { for(int j=i+1;j<size;++j)
+        {  if (A[j]==A[i])
+        { A[j]=1000; P[i]++;
+                  }
+           }
+           }
+      int maxi=intmin;
+  for(int i=0;i<size;++i)
+      if(P[i]>maxi)
+        maxi=i;
+   
+   return A[maxi]; 
 }
