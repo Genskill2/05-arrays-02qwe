@@ -73,7 +73,7 @@ int mode(int A[], int size )
      for(int i=0;i<size;++i)
      {     P[i]=0;
 	     for(int j=i+1;j<size;++j)
-        {  if ((A[j]==A[i])&& (int(A[i])!=42))
+        {  if (A[j]==A[i]&& (int)(A[i])!=42)
            {   A[j]='*'; P[i]++;
                   }
            }
